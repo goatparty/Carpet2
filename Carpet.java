@@ -1,13 +1,15 @@
 import java.util.*;
+import java.io.Console;
 import java.io.*;
+
 public class Carpet {
     private char[] password;
-    Console console = new Console();
+    Console con = new System.console();
     Scanner keyboard = new Scanner(System.in);
     private double price = 8.00;
     private double xDim, yDim;
     private boolean roomDim0 = true;
-    private final String = "Hunter123";
+    private final char[] PASSWORD= {'H','u','n','t','e','r','1','2','3'};
 
     public Carpet() {
         xDim = yDim = 0;
@@ -45,19 +47,25 @@ public class Carpet {
     }
 
     public double getTotalPrice() {
-        return getSquareFootage() * PRICE;
+        return getSquareFootage() * price;
     }
 
-    public double setPrice() {
+    public void setPrice() {
         System.out.print("Please Enter Password: ");
         try {
-            password = console.readPassword();
+            password = con.readPassword();
         }
-        catch (IOException) {
-            System.out.println("IOExcepttion")
+        catch (IOException i) {
+            System.out.println("IOException");
         }
-        for
-        (int x = 0;)
+        if (password == PASSWORD) {
+            System.out.print("Password Correct, enter price: ");
+            price = keyboard.nextDouble();
+        }
+        else {
+            System.out.println("Incorrect Password - Exiting Program");
+            System.exit(404);
+        }
 
     }
 
